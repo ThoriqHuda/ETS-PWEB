@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use App\Models\Post;
+use GuzzleHttp\Middleware;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\DashboardUserController;
 
 Route::get('/home', function () {
     return view('home',[
@@ -35,5 +35,9 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
   
-Route::get('/dashboard',[DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard',function(){
+    return view('dashboard.index');
+})->middleware('auth');
+
+Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
 
