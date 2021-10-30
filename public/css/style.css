@@ -1,20 +1,73 @@
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
 
-  
-  
-  
-  .form-signin .form-floating:focus-within {
-    z-index: 2;
-  }
-  
-  .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  
-  .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.container h1 {
+  margin-top: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.about {
+  margin-top: 2em;
+  text-align: center;
+  font-size: 1.4em;
+  vertical-align: middle;
+}
+
+.about-logo {
+  text-align: center;
+}
+
+.about-logo img {
+  width: 200px;
+}
+
+.contact {
+  margin-top: 2em;
+}
+
+.nav-item a {
+  padding: 0.5em 1em 0.5em 1em;
+  margin-right: 0.5em;
+  border-radius: 0.5em;
+  border: 1px solid transparent;
+}
+
+.nav-item a:hover {
+  border: 1px solid #ffffff41;
+  background-color: #33333320;
+}
+
+.navbar-dark .navbar-brand {
+  letter-spacing: 0.1em;
+}
+
+.icon:before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  padding-right: 0.3em;
+  vertical-align: middle;
+}
+
+.phone:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f879";
+  font-weight: 600;
+}
+/*# sourceMappingURL=style.css.map */
