@@ -20,6 +20,42 @@
         font-weight: bold;
         text-align: center;
     }
+    .order-now {
+        text-align: center;
+        .button {
+            background: transparent;
+            padding: 0.5em 1em;
+            border: 2px solid #888;
+            border-radius: 0.3em;
+            transition: 0.3s;
+            font-size: 1.2em;
+            color: #333;
+            margin-right: 0.5em;
+            text-decoration: none;
+            //text-transform: uppercase;
+            vertical-align: middle;
+        }
+        .button:hover {
+            border: 2px solid #dc3545;
+            background: #dc3546da;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.home-banner {
+    text-align: center;
+    margin: 4em 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        margin: auto;
+        display: block;
+    }
 }
 
 .about {
@@ -72,5 +108,11 @@
 .phone:before {
     font-family: "Font Awesome 5 Free";
     content: "\f879";
+    font-weight: 600;
+}
+
+.mail:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0e0";
     font-weight: 600;
 }
