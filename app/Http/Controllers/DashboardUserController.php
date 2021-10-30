@@ -17,7 +17,7 @@ class DashboardUserController extends Controller
         //return User::where('name',auth()->user()->name)->get();
         
         return view('dashboard.users.index',[
-            'users'=>User::all()
+            'users'=>User::where('name',auth()->user()->name)->get()
         ]);
     }
 
@@ -50,7 +50,7 @@ class DashboardUserController extends Controller
      */
     public function show(User $user)
     {
-        //
+  
     }
 
     /**
@@ -59,9 +59,13 @@ class DashboardUserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Request $request)
     {
-        //
+         {
+            return view('dashboard.users.edit', [
+                'id'=> $request->id
+            ]);
+        }
     }
 
     /**
@@ -73,10 +77,24 @@ class DashboardUserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'username'=> 'required|max:255',
+           'email'=>'required|email',
+           'password'=>'required|min:5'
+        ]);
+        
+        $validatedData['password'] = $validatedData['password'];
+        $validatedData['name'] = $validatedData['name'];
+        $validatedData['username'] = $validatedData['username'];
+        $validatedData['email'] = $validatedData['email'];
 
-    /**
+        User::where('id',auth()->user()->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/user')->with('success','Info Updated');
+    }
+        /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user

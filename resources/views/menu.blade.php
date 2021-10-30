@@ -1,11 +1,11 @@
 @extends('layout/main')
 @section('container')
 
-<h2>Reviews</h2>
+<h2>Menu</h2>
 
 <div class="row ">
     <div class="col-md-6">
-        <form action="/blog" method="get">
+        <form action="/menu" method="get">
             <div class="input-group mb-5">
                 <input type="text" class="form-control" placeholder="Search" name="search" aria-label="search" aria-describedby="button-addon2" 
                 value="{{request('search')  }}">
@@ -19,10 +19,7 @@
       Sort By 
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      
-      <li><a class="dropdown-item" href="/blog/star"  >Stars</a></li>
-      <li><a class="dropdown-item" href="/blog">Latest</a></li>
-      <li><a class="dropdown-item" href="/blog/old">Oldest</a></li>
+      <li><a class="dropdown-item" href="/menu/price">Price</a></li>
     </ul>
   </div>
 
@@ -30,9 +27,9 @@
    @foreach ($data as $item)
    <div class="card mb-3">
     <div class="card-body">
-      <h5 class="card-title">{{ $item->title }} {{ $item->star }} <i class="bi bi-star-fill"></i></h5>
-      <p class="card-text">{{ $item->body }}</p>
-      <p class="card-text"><small class="text-muted">{{ $item->created_at->diffForHumans() }} By {{ $item->author }}</small></p>
+      <h2 class="card-title">{{ $item->title }} </h2>
+      <p class="card-text">Price: {{ $item->price }}</p>
+      <p class="card-text">{{ $item->description }}</p>
     </div>
   </div>
    @endforeach
