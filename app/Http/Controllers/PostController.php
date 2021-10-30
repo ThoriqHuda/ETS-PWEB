@@ -11,7 +11,7 @@ class PostController extends Controller
 
         
         $posts=Post::latest();
-        if(request(''))
+        
         if(request('search')){
             $posts->where('title','like','%'. request('search') .'%');
         }
